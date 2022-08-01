@@ -20,7 +20,8 @@ export class HttpClientService {
       if (requestParameter.fullEndPoint)
         url=requestParameter.fullEndPoint;
       else
-        url = `${this.Url(requestParameter)}${id ? `/${id}`:""}`;
+        url = `${this.Url(requestParameter)}${id ? `/${id}`:""}${requestParameter.queryString ?
+        `?${requestParameter.queryString}` : ""}`;
 
       return this.httpClient.get<T>(url,{headers:requestParameter.headers});
    }
@@ -61,6 +62,7 @@ export class HttpClientService {
 export class RequestParameters{
   controller?:string;
   action?:string;
+  queryString?:string;
 
   headers?:HttpHeaders;
   baseUrl?:string;
