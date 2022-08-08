@@ -11,6 +11,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { DeleteDirective } from './directives/admin/delete.directive';
 import { DeleteDialogsComponent } from './dialogs/delete-dialogs/delete-dialogs.component';
+import { FileUploadComponent } from './services/common/file-upload/file-upload.component';
 
 
 
