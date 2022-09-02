@@ -1,18 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DeleteDialogsComponent } from './delete-dialogs.component';
+import { DeleteDialogComponent } from './delete-dialogs.component';
 
-describe('DeleteDialogsComponent', () => {
-  let component: DeleteDialogsComponent;
-  let fixture: ComponentFixture<DeleteDialogsComponent>;
+describe('DeleteDialogComponent', () => {
+  let component: DeleteDialogComponent;
+  let fixture: ComponentFixture<DeleteDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DeleteDialogsComponent ]
+      declarations: [ DeleteDialogComponent ]
     })
     .compileComponents();
+  });
 
-    fixture = TestBed.createComponent(DeleteDialogsComponent);
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DeleteDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

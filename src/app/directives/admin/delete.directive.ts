@@ -3,7 +3,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Input, Output, Rende
 import { MatDialog } from '@angular/material/dialog';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { BaseComponent, SpinnerType } from 'src/app/base/base.component';
-import { DeleteDialogsComponent, DeletedState } from 'src/app/dialogs/delete-dialogs/delete-dialogs.component';
+import { DeleteDialogComponent, DeleteState } from 'src/app/dialogs/delete-dialogs/delete-dialogs.component';
 import { AlertifyService, MessageType, Position } from 'src/app/services/admin/alertify.service';
 import { HttpClientService } from 'src/app/services/common/http-client.service';
 import { ProductService } from 'src/app/services/common/models/product.service';
@@ -69,13 +69,13 @@ export class DeleteDirective  {
   }
 
   openDialog(afterClosed:any): void {
-    const dialogRef = this.dialog.open(DeleteDialogsComponent, {
+    const dialogRef = this.dialog.open(DeleteDialogComponent, {
       width: '250px',
-      data: DeletedState.Yes,
+      data: DeleteState.Yes,
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result == DeletedState.Yes){
+      if (result == DeleteState.Yes){
         afterClosed();
       }
     });
